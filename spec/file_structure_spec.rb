@@ -12,6 +12,8 @@ describe "a conventional ruby project structure" do
 
     it "should have it's environment file required in the spec_helper" do
       $LOADED_FEATURES.grep(/env\.rb/).any?.should == true
+
+      File.read(File.join(File.dirname(__FILE__), 'spec_helper.rb')).scan(/env\.rb/).any?.should == true
     end
   end
 end
