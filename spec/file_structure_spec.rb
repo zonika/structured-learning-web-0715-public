@@ -16,4 +16,11 @@ describe "a conventional ruby project structure" do
       File.read(File.join(File.dirname(__FILE__), 'spec_helper.rb')).scan(/env\.rb/).any?.should == true
     end
   end
+
+  describe "lib directory" do
+    it "should have all it's files loaded" do
+      expect { Foo }.to_not raise_error
+      expect { Bar }.to_not raise_error
+    end
+  end
 end
