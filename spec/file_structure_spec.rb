@@ -15,6 +15,17 @@ describe "a conventional ruby project structure" do
     end
   end
 
+  describe "lib directory" do
+    it "should exist" do
+      Dir.exists?(File.join(File.dirname(__FILE__), '../lib/')).should == true
+    end
+
+    it "should contain the application code" do
+      File.exists?(File.join(File.dirname(__FILE__), '../lib/foo.rb')).should == true
+      File.exists?(File.join(File.dirname(__FILE__), '../lib/bar.rb')).should == true
+    end
+  end
+
   describe "loading the environment for testing" do
     it "should load the environment file in the spec_helper" do
       $LOADED_FEATURES.grep(/env\.rb/).any?.should == true
