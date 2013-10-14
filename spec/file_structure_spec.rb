@@ -6,6 +6,10 @@ describe "a conventional ruby project structure" do
   end
 
   describe "config directory" do
+    it "should exist" do
+      Dir.exists?(File.join(File.dirname(__FILE__), '../config/')).should == true
+    end
+
     it "should have an environment file" do
       File.exists?(File.join(File.dirname(__FILE__), '../config/env.rb')).should == true
     end
