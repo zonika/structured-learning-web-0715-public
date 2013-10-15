@@ -26,7 +26,7 @@ describe "a somewhat conventional ruby project structure" do
     it "should load the environment file in the spec_helper" do
       $LOADED_FEATURES.grep(/environment\.rb/).any?.should == true
 
-      File.read(File.join(File.dirname(__FILE__), 'spec_helper.rb')).scan(/require.*environment\.rb/).any?.should == true
+      File.read(File.join(File.dirname(__FILE__), 'spec_helper.rb')).scan(/require.*environment/).any?.should == true
     end
   end
 
@@ -62,7 +62,7 @@ describe "a somewhat conventional ruby project structure" do
         run_file_contents = File.read(File.join(File.dirname(__FILE__), '../bin/run.rb'))
 
         run_file_contents.scan(/require/).any?.should == true
-        run_file_contents.scan(/environment\.rb/).any?.should == true
+        run_file_contents.scan(/environment/).any?.should == true
       end
 
       it "should call run on the Foo class" do
