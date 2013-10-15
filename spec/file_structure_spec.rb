@@ -11,15 +11,15 @@ describe "a somewhat conventional ruby project structure" do
     end
 
     it "should have an environment file" do
-      File.exists?(File.join(File.dirname(__FILE__), '../config/env.rb')).should == true
+      File.exists?(File.join(File.dirname(__FILE__), '../config/environment.rb')).should == true
     end
   end
 
   describe "loading the environment for testing" do
     it "should load the environment file in the spec_helper" do
-      $LOADED_FEATURES.grep(/env\.rb/).any?.should == true
+      $LOADED_FEATURES.grep(/environment\.rb/).any?.should == true
 
-      File.read(File.join(File.dirname(__FILE__), 'spec_helper.rb')).scan(/require.*env\.rb/).any?.should == true
+      File.read(File.join(File.dirname(__FILE__), 'spec_helper.rb')).scan(/require.*environment\.rb/).any?.should == true
     end
   end
 
