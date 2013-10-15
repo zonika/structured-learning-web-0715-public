@@ -47,4 +47,10 @@ describe "a somewhat conventional ruby project structure" do
       expect { Bar }.to_not raise_error
     end
   end
+
+  describe "bin directory" do
+    it "should have a run file" do
+      File.exists?(File.join(File.dirname(__FILE__), '../bin/run.rb')).should == true
+    end
+  end
 end
