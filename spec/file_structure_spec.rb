@@ -1,4 +1,4 @@
-describe "a somewhat conventional ruby project structure" do
+describe "a conventional project" do
   describe "tests" do
     it "should require a spec_helper in each test file to load other dependencies" do
       $LOADED_FEATURES.grep(/spec\/spec_helper\.rb/).any?.should == true
@@ -33,8 +33,8 @@ describe "a somewhat conventional ruby project structure" do
     end
   end
 
-  describe "loading the environment for testing" do
-    it "should load the environment file in the spec_helper" do
+  describe "spec_helper" do
+    it "should load the environment file" do
       $LOADED_FEATURES.grep(/config\/environment\.rb/).any?.should == true
 
       spec_helper_file = File.read(File.join(File.dirname(__FILE__), 'spec_helper.rb'))
