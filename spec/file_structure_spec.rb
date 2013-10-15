@@ -13,6 +13,13 @@ describe "a somewhat conventional ruby project structure" do
     it "should have an environment file" do
       File.exists?(File.join(File.dirname(__FILE__), '../config/environment.rb')).should == true
     end
+
+    describe "environment file" do
+      it "should load files from the lib directory" do
+        File.read(File.join(File.dirname(__FILE__), '../config/environment.rb')).scan(/require/).any?.should == true
+        File.read(File.join(File.dirname(__FILE__), '../config/environment.rb')).scan(/lib/).any?.should == true
+      end
+    end
   end
 
   describe "loading the environment for testing" do
