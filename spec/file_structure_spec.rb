@@ -41,11 +41,7 @@ describe "a somewhat conventional ruby project structure" do
 
       spec_helper_file.scan(/require/).any?.should == true
       spec_helper_file.scan(/environment/).any?.should == true
-    end
-  end
 
-  describe "lib directory" do
-    it "should have all it's files loaded" do
       expect { Foo }.to_not raise_error
       expect { Bar }.to_not raise_error
     end
