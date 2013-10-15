@@ -49,7 +49,11 @@ describe "a somewhat conventional ruby project structure" do
   end
 
   describe "bin directory" do
-    it "should have a run file" do
+    it "should exists" do
+      Dir.exists?(File.join(File.dirname(__FILE__), '../bin/')).should == true
+    end
+
+    it "should contain a run.rb file" do
       File.exists?(File.join(File.dirname(__FILE__), '../bin/run.rb')).should == true
     end
   end
