@@ -48,7 +48,7 @@ describe "a somewhat conventional ruby project structure" do
   end
 
   describe "bin directory" do
-    it "should exists" do
+    it "should exist in the application root" do
       Dir.exists?(File.join(File.dirname(__FILE__), '../bin/')).should == true
     end
 
