@@ -26,7 +26,10 @@ describe "a somewhat conventional ruby project structure" do
     it "should load the environment file in the spec_helper" do
       $LOADED_FEATURES.grep(/config\/environment\.rb/).any?.should == true
 
-      File.read(File.join(File.dirname(__FILE__), 'spec_helper.rb')).scan(/require.*environment/).any?.should == true
+      spec_helper_file = File.read(File.join(File.dirname(__FILE__), 'spec_helper.rb'))
+
+      spec_helper_file.scan(/require/).any?.should == true
+      spec_helper_file.scan(/environment/).any?.should == true
     end
   end
 
