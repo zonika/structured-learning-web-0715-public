@@ -1,6 +1,6 @@
 describe "a somewhat conventional ruby project structure" do
   describe "tests" do
-    it "should require a helper to load other dependencies" do
+    it "should require a spec_helper in each test file to load other dependencies" do
       $LOADED_FEATURES.grep(/spec\/spec_helper\.rb/).any?.should == true
     end
   end
