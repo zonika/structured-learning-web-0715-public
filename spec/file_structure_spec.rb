@@ -56,5 +56,19 @@ describe "a somewhat conventional ruby project structure" do
     it "should contain a run.rb file" do
       File.exists?(File.join(File.dirname(__FILE__), '../bin/run.rb')).should == true
     end
+
+    describe "run.rb executable" do
+      it "should load the environment" do
+        run_file_contents = File.read(File.join(File.dirname(__FILE__), '../bin/run.rb'))
+
+        run_file_contents.scan(/require/).any?.should == true
+        run_file_contents.scan(/environment\.rb/).any?.should == true
+      end
+
+      it "should call run on the Foo class" do
+        Foo.should_receive(:run)
+        require_relative '../bin/run.rb'
+      end
+    end
   end
 end
