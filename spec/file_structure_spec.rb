@@ -67,6 +67,7 @@ describe "a somewhat conventional ruby project structure" do
 
       it "should call run on the Foo class" do
         Foo.should_receive(:run)
+
         require_relative '../bin/run.rb'
       end
     end
