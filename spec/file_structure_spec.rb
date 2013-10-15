@@ -5,6 +5,17 @@ describe "a somewhat conventional ruby project structure" do
     end
   end
 
+  describe "lib directory" do
+    it "should exist" do
+      Dir.exists?(File.join(File.dirname(__FILE__), '../lib/')).should == true
+    end
+
+    it "should contain the application code" do
+      File.exists?(File.join(File.dirname(__FILE__), '../lib/foo.rb')).should == true
+      File.exists?(File.join(File.dirname(__FILE__), '../lib/bar.rb')).should == true
+    end
+  end
+
   describe "config directory" do
     it "should exist in the application root" do
       Dir.exists?(File.join(File.dirname(__FILE__), '../config/')).should == true
@@ -30,17 +41,6 @@ describe "a somewhat conventional ruby project structure" do
 
       spec_helper_file.scan(/require/).any?.should == true
       spec_helper_file.scan(/environment/).any?.should == true
-    end
-  end
-
-  describe "lib directory" do
-    it "should exist" do
-      Dir.exists?(File.join(File.dirname(__FILE__), '../lib/')).should == true
-    end
-
-    it "should contain the application code" do
-      File.exists?(File.join(File.dirname(__FILE__), '../lib/foo.rb')).should == true
-      File.exists?(File.join(File.dirname(__FILE__), '../lib/bar.rb')).should == true
     end
   end
 
