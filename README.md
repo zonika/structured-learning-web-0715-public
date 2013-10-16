@@ -3,7 +3,7 @@ structured-learning
 
 File structure lab
 
-Fork this repository and clone your fork. Work in the master branch.
+Fork this repository and work in your fork in the master branch.
 
 This lab guides you through setting up a conventional looking Ruby application with multiple directories.
 
