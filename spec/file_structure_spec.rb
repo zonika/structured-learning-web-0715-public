@@ -6,7 +6,7 @@ describe "In a typical project" do
   end
 
   describe "the lib directory" do
-    it "would exist" do
+    it "would exist in the application root" do
       Dir.exists?(File.join(File.dirname(__FILE__), '../lib/')).should == true
     end
 
