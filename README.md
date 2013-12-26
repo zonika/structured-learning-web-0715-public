@@ -1,7 +1,9 @@
-structured-learning
-===================
+---
+  tags: todo, tdd, directory structure
+  languages: ruby
+---
 
-File structure lab
+# structured-learning
 
 Fork this repository and work in your fork in the master branch.
 
