@@ -1,5 +1,5 @@
 ---
-  tags: todo, tdd, directory structure
+  tags: todo, tdd, directory structure, introduction
   languages: ruby
   resources: 2
 ---
