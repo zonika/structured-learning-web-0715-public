@@ -76,11 +76,11 @@ describe "In a typical project" do
 
   describe 'Gemfile and Gemfile.lock' do 
     it 'Gemfile exists' do 
-      expect(Dir.exists?(File.join(File.dirname(__FILE__), '../Gemfile'))).to eq(true)
+      expect(File.exists?(File.join(File.dirname(__FILE__), '../Gemfile'))).to eq(true)
     end
 
     it 'Gemfile.lock exists' do 
-      expect(Dir.exists?(File.join(File.dirname(__FILE__), '../Gemfile.lock'))).to eq(true)
+      expect(File.exists?(File.join(File.dirname(__FILE__), '../Gemfile.lock'))).to eq(true)
     end
   end
 end
