@@ -1,9 +1,3 @@
----
-  tags: todo, tdd, directory structure, introduction
-  languages: ruby
-  resources: 2
----
-
 # structured-learning
 
 This lab guides you through setting up a conventional looking Ruby application with multiple directories. 
